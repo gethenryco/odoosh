@@ -20,11 +20,11 @@
             <group name="accounting_info_group" position="inside">
                 <field
                     name="customer_vat_partner_id"
-                    attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}"
                 />
                 <field
                     name="customer_vat"
-                    attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"
+                    attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund'))]}"
                 />
             </group>
         </field>
