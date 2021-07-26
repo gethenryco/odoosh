@@ -18,7 +18,7 @@ class AccountMove(models.Model):
     def _compute_customer_vat_partner_id(self):
         partner_m = self.env["res.partner"]
         for rec in self:
-            if not rec.partner_shipping_id or rec.type not in (
+            if not rec.partner_shipping_id or rec.move_type not in (
                 "out_invoice",
                 "out_refund",
             ):
