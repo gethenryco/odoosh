@@ -63,7 +63,7 @@
                     <div name="financial_infos">
                         <span t-field="company.report_footer"/>
                     </div>
-
+                    This is a text
                     <div t-if="o.partner_id.has_vat" class="mt16">
                         <t
                             t-if="o.company_id.country_id.vat_label"
