@@ -64,6 +64,24 @@
                         <span t-field="company.report_footer"/>
                     </div>
 
+                    <div t-if="o.partner_id.has_vat" class="mt16">
+                        <t
+                            t-if="o.company_id.country_id.vat_label"
+                            t-esc="o.company_id.country_id.vat_label"
+                            id="inv_tax_id_label"
+                        />
+                        <t t-else="">Tax ID</t>: <span t-field="o.customer_vat" />
+                    </div>
+
+                    <div t-if="o.partner_id.has_vat" class="mt16">
+                        <t
+                            t-if="o.company_id.country_id.vat_label"
+                            t-esc="o.company_id.country_id.vat_label"
+                            id="inv_tax_id_label"
+                        />
+                        <t t-else="">Tax ID</t>: <span t-field="o.customer_vat" />
+                    </div>
+
                     <div t-if="report_type == 'pdf'" class="text-muted">
                         Page:
                         <span class="page"/>
