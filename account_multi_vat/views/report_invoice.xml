@@ -23,7 +23,7 @@
             position="replace"
         >
             <t
-                t-if="'fiscal_position_id' in o._fields and o._name == 'account.move' and o.type in ['out_invoice', 'out_refund']"
+                t-if="'fiscal_position_id' in o._fields and o._name == 'account.move' and o.move_type in ['out_invoice', 'out_refund']"
             >
                 <li
                     t-if="company.partner_id.has_vat"

@@ -11,7 +11,7 @@ class ResPartner(models.Model):
     is_tax_administration = fields.Boolean(
         string="Tax administration", default=False, copy=False
     )
-    has_vat = fields.Boolean(compute="_compute_has_vat", readonly=True, store=False)
+    has_vat = fields.Boolean(compute="_compute_has_vat", readonly=True, store=True)
 
     def _compute_has_vat(self):
         partner_id_vat_category = self.env.ref(
