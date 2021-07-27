@@ -39,7 +39,34 @@
                     />: <span t-field="company.vat" /></li>
             </t>
         </xpath>
-        <xpath expr="//div[@id='footer']" position="replace">
+    </template>
+    <template id="report_header_footer" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[@class='header']" position="replace">
+            <div class="header">
+                <div class="row">
+                    <div class="col-3 mb4">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;"
+                             alt="Logo"/>
+                    </div>
+                    <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header"
+                         name="moto"/>
+                </div>
+                <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                    <div class="col-12">
+                        <div style="border-bottom: 1px solid black;"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6" name="company_address">
+                        <div t-field="company.partner_id"
+                             t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                        />
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@class='footer o_standard_footer']" position="replace">
             <div class="footer o_standard_footer">
                 <div class="text-center" style="border-top: 1px solid black;">
                     <ul class="list-inline mb4">
@@ -61,25 +88,7 @@
                     <div name="financial_infos">
                         <span t-field="company.report_footer"/>
                     </div>
-                    This is a text
-                    <div t-if="o.partner_id.has_vat" class="mt16">
-                        <t
-                            t-if="o.company_id.country_id.vat_label"
-                            t-esc="o.company_id.country_id.vat_label"
-                            id="inv_tax_id_label"
-                        />
-                        <t t-else="">Tax ID</t>: <span t-field="o.customer_vat" />
-                    </div>
-
-                    <div t-if="o.partner_id.has_vat" class="mt16">
-                        <t
-                            t-if="o.company_id.country_id.vat_label"
-                            t-esc="o.company_id.country_id.vat_label"
-                            id="inv_tax_id_label"
-                        />
-                        <t t-else="">Tax ID</t>: <span t-field="o.customer_vat" />
-                    </div>
-
+                    THIS IS CUSTOM
                     <div t-if="report_type == 'pdf'" class="text-muted">
                         Page:
                         <span class="page"/>
