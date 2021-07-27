@@ -16,6 +16,7 @@
                 <t t-else="">Tax ID</t>: <span t-field="o.customer_vat" />
             </div>
         </xpath>
+
     </template>
     <template id="external_layout_multi_vat" inherit_id="web.external_layout_standard">
         <xpath
@@ -38,9 +39,6 @@
                     />: <span t-field="company.vat" /></li>
             </t>
         </xpath>
-    </template>
-
-    <template id="report_header_footer" inherit_id="web.external_layout_standard">
         <xpath expr="//div[@class='footer o_standard_footer']" position="replace">
             <div class="footer o_standard_footer">
                 <div class="text-center" style="border-top: 1px solid black;">
