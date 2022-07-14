@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="external_layout_background_inherit" inherit_id="web.external_layout_background">
+        <xpath expr="//div[1]/div[3]" position="replace">
+            <div class="float-left company_address">
+                <div>
+                    <strong t-field="company.name"/>
+                </div>
+                <span t-esc="'{} {}'.format(company.street_name, company.street_number)" />
+                <br/>
+                <span t-esc="'{} {}'.format(company.zip, company.city)" />
+            </div>
+        </xpath>
+    </template>
+</odoo>
